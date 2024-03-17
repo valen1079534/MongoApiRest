@@ -1,8 +1,8 @@
-import Cliente from "../Model/Model.ClientesVDL.js";
+import ClienteVDL from "../Model/Model.ClientesVDL.js";
 
 export const getClienteVDL = async (req, res) =>{
     try {
-        const resultado = await Cliente.find({})
+        const resultado = await ClienteVDL.find({})
 
         if(resultado){
             res.status(200).json(resultado)
@@ -16,7 +16,7 @@ export const getClienteVDL = async (req, res) =>{
 
 export const postClienteVDL = async (req, res) => {
     try {
-        const resultado = await Cliente.create(req.body)
+        const resultado = await ClienteVDL.create(req.body)
 
         if(resultado){
             res.status(200).json({Message:'Cliente registrado con exito'})
@@ -30,7 +30,7 @@ export const postClienteVDL = async (req, res) => {
 
 export const putClienteVDL = async (req, res) =>{
     try {
-        const resultado = await Cliente.findByIdAndUpdate(req.params.id, req.body)
+        const resultado = await ClienteVDL.findByIdAndUpdate(req.params.id, req.body)
 
         if(resultado){
             res.status(200).json({Message:'Cliente actualizado con exito'})
@@ -45,7 +45,7 @@ export const putClienteVDL = async (req, res) =>{
 
 export const deleteClienteVDL = async (req, res) =>{
     try {
-        const resultado = await Cliente.findByIdAndDelete(req.params.id)
+        const resultado = await ClienteVDL.findByIdAndDelete(req.params.id)
 
         if(resultado){
             res.status(200).json({Message: 'Cliente eliminado con exito'})

@@ -8,9 +8,16 @@ const articulosSchema = mongoose.Schema({
 
     tipo:{
         type:String,
+        enum:["Vehiculo", "Oro", "Electrodomesticos", "Maquinaria", "Herramienta"],
+        required: true,
+    },
+
+    estado:{
+        type:String,
+        enum: ["activo", "inactivo"],
         required: true,
     }
 })
 
-const ArticulosVDL = mongoose.model('Articulos', articulosSchema)
+const ArticulosVDL = mongoose.model('ArticulosVDL', articulosSchema)
 export default ArticulosVDL

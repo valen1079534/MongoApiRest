@@ -10,6 +10,6 @@ export const postUsuarioVDL = async (req, res) =>{
             res.status(404).json({Status:400, Message: 'Fallo registro usuario'})
         }
     } catch (error) {
-        res.status(500).json({Message:+error})
+        res.status(500).json({Message : 'ERROR SERVIDOR'+error})
     }
 }

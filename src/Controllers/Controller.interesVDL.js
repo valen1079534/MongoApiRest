@@ -1,8 +1,8 @@
-import Interes from "../Model/Model.interesVDL.js";
+import InteresVDL from "../Model/Model.interesVDL.js";
 
 export const postInteresVDL = async (req, res) =>{
     try {
-        const resultado = await Interes.create(req.body)
+        const resultado = await InteresVDL.create(req.body)
 
         if(resultado){
             res.status(200).json({Message: 'Interes registrado'})
@@ -16,7 +16,11 @@ export const postInteresVDL = async (req, res) =>{
 
 export const deleteInteresVDL = async (req, res) =>{
     try {
-        const resultado = await Interes.findByIdAnDelete(req.params.id)
+
+        const resultado = await InteresVDL.findById(req.params.id)
+
+        resultado.estado = "pagado"
+        await resultado.save()
 
         if(resultado){
             res.status(200).json({Message: 'El interes se elimino con exitos'})

@@ -17,11 +17,16 @@ const interesShema = mongoose.Schema({
     },
 
     alquiler:{
-        type:Number,
+        type:mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+
+    estado:{
+        type: String,
+        enum: ["pagado", "no pagado"],
         required: true
     }
-
 })
 
-const Interes = mongoose.model('Interes', interesShema)
-export default Interes
+const InteresVDL = mongoose.model('InteresVDL', interesShema)
+export default InteresVDL

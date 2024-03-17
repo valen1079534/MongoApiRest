@@ -14,7 +14,7 @@ const alquilarSchema = mongoose.Schema({
         required: true
     },
     descripcion:{
-        type:Number,
+        type:String,
         required:true
     },
     interes:{
@@ -23,13 +23,14 @@ const alquilarSchema = mongoose.Schema({
     },
     cliente:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Cliente'
+        ref:'ClienteVDL'
     },
     articulo:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'Articulo'
+        ref:'ArticuloVDL'
     }
 })
 
-const AlquilerVDL = mongoose.model('Alquiler', alquilarSchema)
+const AlquilerVDL = mongoose.model('AlquilerVDL', alquilarSchema)
 export default AlquilerVDL
+

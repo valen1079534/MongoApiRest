@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    
+    <h1>Documentacion Apirest MongoDB</h1>
+    <h2>ENDPOINT USUARIO</h2>
+    <h2>Registrar Usuario</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Registrar usuario</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite registrar Usuario</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/usuarioVDL/registrarUsuario</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>POST</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token: token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                Json:
+                {
+                    "identificacion":1079534484
+                    "password": "1079Diaz"
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:
+                status:200,
+                Json:{
+                    Message: 'Usuario registado con exito'
+                } <br>
+
+                INCORRECTO:
+                status:403
+                Json:{
+                    Message: Fallo registro usuario
+                } <br>
+
+                ERROR
+                status: 500,
+                Json{
+                    Message: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>ENDPOINT CLIENTE</h2> <br>
+    <h2>Registrar Clientes</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Registrar Clientes</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite registrar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/clienteVDL/registrarCliente</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>POST</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                {
+                    "identificacion": "1079534484",
+                    "nombres": "Valentina",
+                    "direcion": "Timana",
+                    "telefono": "3204622680",
+                    "fecha_nac":"2005-05-16"
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Cliente registrado con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo registro del cliente
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Listar Clientes</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Listar Clientes</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite Listar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/clienteVDL/listarCliente</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>GET</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>NULL</td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    Json:{
+                        "identificacion": "1079534484",
+                        "nombres": "Valentina",
+                        "direcion": "Timana",
+                        "telefono": "3204622680",
+                        "fecha_nac":"2005-05-16"
+                    }
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: No hay ningun cliente registrado
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    
+    <hr>
+
+    <h2>Actualizar Clientes</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>5</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Actualizar Clientes</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite actualizar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/clienteVDL/actualizarCliente/1079534484</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>PUT</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                Json:{
+                    "identificacion": "1079534484",
+                    "nombres": "Valentina",
+                    "direcion": "Timana",
+                    "telefono": "3204622680",
+                    "fecha_nac":"2005-05-16"
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Cliente actualizado con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo actualizacion del cliente
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Eliminar Clientes</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Eliminar Clientes</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite Eliminar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/clienteVDL/EliminarCliente/1079534484</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>DELETE</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>NULL</td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Cliente actualizado con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo actualizacion del cliente
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Eliminar Clientes</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>6</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Eliminar Clientes</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite Eliminar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/clienteVDL/EliminarCliente/id</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>DELETE</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>NULL</td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Cliente actualizado con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo actualizacion del cliente
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>ENDPOINT ARTICULOS</h2>
+    <h2>Registrar articulos</h2>
+
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Registrar Articulos</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite registrar articulos</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/articulosVDL/registrarArticulo</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>POST</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                {
+                    "nombre": "Anillo",
+                    "tipo": "Oro",
+                    "estado": "activo"
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Articulo registrado
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo registro aticulo
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+    
+    <hr>
+
+    <h2>Desactivar articulos</h2>
+
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>8</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Desactivar Articulos</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite desactivar articulos</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/articulosVDL/DesactivarArticulo/id</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>PUT</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>NULL</td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Articulo desactivado
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: El articulo no se pudo desactivar
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <h2>ENDPOINT ALQUILER</h2>
+    <h2>Registrar alquiler</h2>
+
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Registrar Alquiler</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite registrar alquiler</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/alquilerVDL/registroAlquiler</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>POST</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                {
+                    "valor": "100000",
+                    "fecha": "2024-07-20",
+                    "meses": 12
+                    "descripcion": "articulo con interes 2%",
+                    "interes":2,
+                    "cliente":objectId,
+                    "articulo":objectId
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Alquiler registado con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo registro alquiler
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Actualizar alquiler</h2>
+
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>10</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Actualizar Alquiler</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite actualizar alquiler</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/alquilerVDL/actualizacionAlquieler/id</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>PUT</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                {
+                    "valor": "100000",
+                    "fecha": "2024-07-20",
+                    "meses": 12
+                    "descripcion": "articulo con interes 2%",
+                    "interes":2,
+                    "cliente":objectId,
+                    "articulo":objectId
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Actualizacion de alquiler con exito
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Fallo actualizacion de alquiler
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>ENDPOINT INTERESES</h2>
+    <h2>Registrar Intereses</h2>
+    <h2>Registrar alquiler</h2>
+
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>11</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Registrar Intereses</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite registrar alquiler</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/intereseVDL/registraIntereses</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>POST</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>
+                {
+                    "mes":2,
+                    "fecha":"2024-12-12",
+                    "valor":100000
+                    "alquiler":objectId
+                }
+            </td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: Interes registrado
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: Registro de interes no autorizado
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+    <h2>Eliminar intereses</h2>
+    <table>
+        <tr>
+            <td>Numero</td>
+            <td>12</td>
+        </tr>
+
+        <tr>
+            <td>Nombre EndPoint</td>
+            <td>Eliminar intereses</td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION</td>
+            <td>Permite Desactivar clientes</td>
+        </tr>
+
+        <tr>
+            <td>URL</td>
+            <td>/intereseVDL/eliminarInterese/id</td>
+        </tr>
+
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>DELETE</td>
+        </tr>
+
+        <tr>
+            <td>Header</td>
+            <td>Token:token</td>
+        </tr>
+
+        <tr>
+            <td>Usuario</td>
+            <td>Administrador</td>
+        </tr>
+
+        <tr>
+            <td>Peticion Json</td>
+            <td>NULL</td>
+        </tr>
+
+        <tr>
+            <td>Respuesta Json</td>
+            <td>
+                CORRECTO:{
+                    STATUS:200
+                    MESSAGE: El interes se elimino con exitos
+                } <br>
+
+                INCORRECTO:{
+                    STATUS:404
+                    MESSAGE: No se elimino el interes
+                } <br>
+
+                ERROR:{
+                    STATUS:500
+                    MESSAGE: ERROR SERVIDOR
+                }
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

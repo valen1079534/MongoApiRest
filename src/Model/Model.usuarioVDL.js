@@ -12,5 +12,5 @@ const usuarioSchema = mongoose.Schema({
     }
 })
 
-const UsuarioVDL = mongoose.model('Usuario', usuarioSchema)
+const UsuarioVDL = mongoose.model('UsuarioVDL', usuarioSchema)
 export default UsuarioVDL
